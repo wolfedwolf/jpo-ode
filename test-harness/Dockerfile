@@ -8,4 +8,4 @@ RUN pip3 install flask_restful
 WORKDIR /home/test-harness
 COPY . /home/test-harness
 
-CMD python main.py kafka
+CMD python main.py rest

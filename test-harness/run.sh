@@ -4,4 +4,4 @@ if [[ -z "$DOCKER_HOST_IP" ]]; then
    exit 1
 fi
 docker build -t ode-test-harness .
-docker run --rm -e DOCKER_HOST_IP=$DOCKER_HOST_IP ode-test-harness:latest
+docker run --rm -p 8082:8082/tcp -e DOCKER_HOST_IP=$DOCKER_HOST_IP ode-test-harness:latest

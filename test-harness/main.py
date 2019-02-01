@@ -23,8 +23,10 @@ def main():
     timBroadcastTopic='topic.J2735TimBroadcastJson'
 
     if testType == "rest":
+        tlog.info("Testing as rest app")
         testCase = rest_test.RestTest(testFileDict, timBroadcastTopic, DOCKER_HOST_IP)
     elif testType == "kafka":
+        tlog.info("Testing as kafka app")
         testCase = kafka_test.KafkaTest(testFileDict, timBroadcastTopic, DOCKER_HOST_IP)
     else:
         tlog.info("Unknown test type: <%s>, expected <%s> or <%s>"%(testType, "rest", "kafka"))
